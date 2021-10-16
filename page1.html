@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script data-require="jquery@3.1.1" data-semver="3.1.1"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="page1.css">
+    <link rel="stylesheet" href="quantity.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cravestory</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="split left">
+            <div class="mySlides fade">
+                <div class="bgad-1">
+                    <img src="Images/ad1img.jpg" alt="firstad">
+                </div>
+                <img id="logo" src="Images/logo.png" alt="logo">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="bgad-1">
+                    <img src="Images/ad2img.jpg" alt="firstad">
+                </div>
+                <img id="logo" src="Images/logo.png" alt="logo">
+
+            </div>
+
+            <div class="mySlides fade">
+                <div class="bgad-1">
+                    <img src="Images/ad3img.jpg" alt="firstad">
+                </div>
+                <img id="logo" src="Images/logo.png" alt="logo">
+
+            </div>
+
+
+        </div>
+
+        <div class="split right">
+            <div class="rightpart">
+                <div class="split items">
+                    <div id="item1">
+                        <img src="Images/Item1.jpg" alt="firstitem" height="100%" width="100%">
+                        <div class="button"><a href="#"> POPCORN </a></div>
+                    </div>
+
+                    <div id="item2">
+                        <img src="Images/Item2.jpg" alt="seconditem" height="100%" width="100%">
+                        <div class="button1"><a href="#"> BURGERS </a></div>
+                    </div>
+
+                    <div id="item3">
+                        <img src="Images/Item3.jpg" alt="thirditem" height="100%" width="100%">
+                        <div class="button2"><a href="#"> PIZZAS </a></div>
+                    </div>
+
+                    <div id="item4">
+                        <img src="Images/Item4.jpg" alt="fourthitem" height="100%" width="100%">
+                        <div class="button3"><a href="#"> OMELETTE </a></div>
+                    </div>
+
+                    <div class="close"><img src="Icons/close.svg"></div>
+                </div>
+                <div class="split last">
+                    <div class="popcorn"><a>POPCORN</a></div>
+                    <div class="popitem1">
+                        <a href="#">Butterfly Popcorn</a>
+
+                    </div>
+                    <div class="quantity buttons_added">
+                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max=""
+                            name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern=""
+                            inputmode=""><input type="button" value="+" class="plus">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <h1 class="menubutton">menu</h1>
+
+    </div>
+
+    <script src="page1.js"></script>
+    <script src="quantity.js"></script>
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            slides[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+    </script>
+
+
+</body>
+
+</html>
